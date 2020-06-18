@@ -1,0 +1,35 @@
+{% extends "layout.html" %}
+{% block main %}
+<!-- form action= "{{ url_for('login')}}" method="post" -->
+
+    <body>
+        <div class="container">   
+            <div class="row">
+                
+               <div style="width: 35%; margin: 0 auto;">
+                <h1 style="text-align: center; margin-top:30%;"> LOGIN </h1>
+                <form action= "{{ url_for('login')}}" method="post">
+                   <div class="form-group">
+                       <input class="form-control" type="text" name="username" placeholder="username" required>        
+                   </div>
+                   <div class="form-group">
+                        <input class="form-control" type="password" name="password" placeholder="password" required>
+                    </div>
+                    <a class= "float-md-left" href= {{url_for('signup')}}>Create an Account</a>
+                    <a class= "float-xs-none float-lg-right" href= #>Forget Account?</a><br><br>
+                    
+                    <div class="form-group">
+                        <button class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
+                    </div>
+                  
+                </form>
+                
+                </div>
+            </div>
+        </div>
+    </body>
+
+
+
+{% endblock %}
+    

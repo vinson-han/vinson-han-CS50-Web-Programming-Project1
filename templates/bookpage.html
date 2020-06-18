@@ -1,0 +1,65 @@
+{%extends 'index.html'%}
+    <head>    
+    </head>
+    {%block main%}
+    <body>
+        <div class="container">   
+            <div class="row">
+                <div style="width: 35%; margin: 0 auto">
+                    {% if result%}
+                    <div class ="conatiner mt-5">
+                        <div class="row ">
+                            <div class ="col text-center">
+                                <h1> {{result.title}} </h1>
+                                <p>ISBN:{{result.isbn}}</p>
+                                <p>Author:{{result.author}}</p>
+                                <p>Published:{{result.year}}</p>
+                                <p>GoodRead Total Ratings: {{writingCount}}</p>
+                                <p>GoodRead Ratings: {{goodreadAverage}}</p>
+                                   
+                                   
+                                   
+                                {% if not postExist %}
+                                <form action= "{{url_for('book',isbn = result.isbn)}}" method="POST">
+                                <div class="form-group">
+                                    <label for="comment">Comment:</label>
+                                    <textarea class="form-control" rows="5" id="comment" name="comment" required></textarea>
+                                    <div class="form-group">
+                                        <label for="exampleFormControlSelect1">Rating</label>
+                                        <select class="form-control" id="exampleFormControlSelect1" name="option">
+                                          <option>1</option>
+                                          <option>2</option>
+                                          <option>3</option>
+                                          <option>4</option>
+                                          <option selected="selected">5</option>
+                                        </select>
+                                    </div>
+                                    <button type="submit" class="btn btn-lg btn-primary form-control mt-2">Submit</button>
+                                </div>
+                                </form>
+                                {% endif%}
+                                
+                        
+                              
+                            </div>
+                        </div>
+                    </div>
+                    {% endif %}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </body>
+  
+
+
+    {%endblock%}
+
+
+
+    <!--   {% if result%}
+                
+                {{result.isbn}}
+                {{result.author}}
+                {{result.year}}
+            {% endif %} -->

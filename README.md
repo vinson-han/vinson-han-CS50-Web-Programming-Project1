@@ -1,1 +1,3 @@
-# vinson-han-CS50-Web-Programming-Project1
+# Project 1
+
+Web Programming with Python and JavaScript

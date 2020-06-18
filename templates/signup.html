@@ -1,0 +1,35 @@
+{% extends "layout.html" %}
+
+{% block profile %}
+<li class='nav-item'><a class='nav-link text-white' href="{{url_for('login')}}"><i class="fas fa-sign-in-alt text-white">&nbsp;</i> Login</a></li>    
+{% endblock %}
+{% block main %}
+    <body>
+        <div class="container">   
+            <div class="row">
+                <div style="width: 35%; margin: 0 auto;">
+                    <h1 style="text-align: center; margin-top:30%;"> SIGN UP </h1>
+                    <form action= "{{ url_for('signup')}}" method="post">
+                        <div class="form-group">
+                            <input class="form-control" type="text" name="username" placeholder="username" minlength="3" maxlength="15" required>        
+                        </div>
+                        <div class="form-group">
+                            <input class="form-control" type="email" name="email" placeholder="email" required>
+                        </div>
+                        <div class="form-group">
+                            <input class="form-control" type="password" name="password" placeholder="password" minlength="3" maxlength="20" required>
+                        </div>
+                    
+                        <div class="form-group">
+                            <input class="form-control" type="password" name="passwords" placeholder="re-type password" required>
+                        </div>
+                        <div class="form-group">
+                            <button class="btn btn-lg btn-primary btn-block" type="submit">Create</button>
+                        </div>
+                    </form>
+                    </div>
+                </div>
+        </div>
+    </body>
+
+{% endblock%}
